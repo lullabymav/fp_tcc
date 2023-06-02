@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Navbar from "../components/navbar/Navbar";
 
 const Add = () => {
   const [book, setBook] = useState({
@@ -31,6 +32,7 @@ const Add = () => {
 
   return (
     <div className="form">
+        <Navbar />
       <h1>Add New Book</h1>
       <input
         type="text"

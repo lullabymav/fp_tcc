@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Navbar from "../components/navbar/Navbar";
+// import Navbar from "../components/navbar/Navbar";
 // import "./Navbar.jsx";
 
 
-const Books = () => {
+const BooksUser = () => {
+    
     const [books, setBooks] = useState([])
 
     useEffect(()=> {
@@ -32,7 +33,7 @@ const Books = () => {
 
   return (
     <div>
-        <Navbar />
+        {/* <Navbar /> */}
            <div className="books">
                 {books.map(book =>(
                     <div className="book" key={book.id}>
@@ -40,16 +41,11 @@ const Books = () => {
                         <h2>{book.title}</h2>
                         <p>{book.description}</p>
                         <span>{book.price}</span>
-                        <button className="delete" onClick={()=>handleDelete(book.id)}>Delete</button>
-                        <button className="update"><Link to={`/update/${book.id}`}>Update</Link></button>
                     </div>
                 ))}
            </div>
-           <button className="add">
-                <Link to="/add" className="link">Add New Book</Link>
-            </button>
     </div>
   )
 }
 
-export default Books;
+export default BooksUser;
