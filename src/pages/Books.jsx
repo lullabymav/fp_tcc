@@ -40,14 +40,14 @@ const Books = () => {
                         <h2>{book.title}</h2>
                         <p>{book.description}</p>
                         <span>{book.price}</span>
-                        <button className="delete" onClick={()=>handleDelete(book.id)}>Delete</button>
-                        <button className="update"><Link to={`/update/${book.id}`}>Update</Link></button>
+                        {/* <button className="delete" onClick={()=>handleDelete(book.id)}>Delete</button>
+                        <button className="update"><Link to={`/update/${book.id}`}>Update</Link></button> */}
                     </div>
                 ))}
            </div>
-           <button className="add">
+           {/* <button className="add">
                 <Link to="/add" className="link">Add New Book</Link>
-            </button>
+            </button> */}
     </div>
   )
 }

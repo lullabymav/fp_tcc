@@ -34,12 +34,12 @@ const Navbar = () => {
                 className="avatar"
               />
             </div>
-            <div className="item">
+            {/* <div className="item">
               <Link to="/users" style={{ textDecoration: "none" }}>
                 <PersonOutlineIcon className="icon" />
                 <span>Users</span>
               </Link>
-            </div>
+            </div> */}
             <div className="item">
               <ExitToAppIcon className="icon" onClick={handleLogout}/>
               <span>Logout</span>

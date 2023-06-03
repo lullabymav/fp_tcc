@@ -38,20 +38,8 @@ function App() {
                 </RequireAuth>
               }
             />
-            {/* <Route path="books-user">
-              <Route
-                index
-                element={
-                  <RequireAuth>
-                    <BooksUser />
-                  </RequireAuth>
-                }
-              />
-            </Route> */}
-            {/* <Route path="/add" element={<Add />} /> */}
-            {/* <Route path="/update/:id" element={<Update />} /> */}
           
-            <Route path="add">
+            {/* <Route path="add">
               <Route
                 index
                 element={
@@ -70,7 +58,7 @@ function App() {
                   </RequireAuth>
                 }
               />
-            </Route>
+            </Route> */}
             <Route path="users">
               <Route
                 index
