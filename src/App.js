@@ -16,89 +16,27 @@ import "./style.css";
 
 function App() {
   // const currentUser = false;
-  const {currentUser} = useContext(AuthContext);
+  // const {currentUser} = useContext(AuthContext);
 
-  const RequireAuth = ({ children }) => {
-    return currentUser ? children : <Navigate to="/login" />;
-  };
+  // const RequireAuth = ({ children }) => {
+  //   return currentUser ? children : <Navigate to="/login" />;
+  // };
 
   // console.log(currentUser)
 
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/">
-            <Route path="/login" element={<Login />} />
-            <Route
-              index
-              element={
-                <RequireAuth>
-                  <Books />
-                </RequireAuth>
-              }
-            />
-            {/* <Route path="books-user">
-              <Route
-                index
-                element={
-                  <RequireAuth>
-                    <BooksUser />
-                  </RequireAuth>
-                }
-              />
-            </Route> */}
-            {/* <Route path="/add" element={<Add />} /> */}
-            {/* <Route path="/update/:id" element={<Update />} /> */}
-          
-            <Route path="add">
-              <Route
-                index
-                element={
-                  <RequireAuth>
-                    <Add />
-                  </RequireAuth>
-                }
-              />
-            </Route>
-            <Route path="/update/:id">
-              <Route
-                index
-                element={
-                  <RequireAuth>
-                    <Update />
-                  </RequireAuth>
-                }
-              />
-            </Route>
-            <Route path="users">
-              <Route
-                index
-                element={
-                  <RequireAuth>
-                    <List />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path=":userId"
-                element={
-                  <RequireAuth>
-                    <Single />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="new"
-                element={
-                  <RequireAuth>
-                    <New inputs={userInputs} title="Add New User" />
-                  </RequireAuth>
-                }
-              />
-            </Route>
-          </Route>
-        </Routes>
+      <Routes>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/" element={<Books/>}/>
+        <Route path="/add" element={<Add/>}/>
+        <Route path="/users" element={<List/>}/>
+        {/* <New inputs={userInputs} title="Add New User" /> */}
+        <Route path="/new" element={<userInputs/>}/>
+        <Route path="/:userId" element={<Single/>}/>
+        <Route path="/update/:id" element={<Update/>}/>
+      </Routes>
       </BrowserRouter>
     </div>
   );

@@ -11,25 +11,36 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navitage = useNavigate()
+  const navigate  = useNavigate()
 
   const {dispatch} = useContext(AuthContext)
 
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
+
+  //   signInWithEmailAndPassword(auth, email, password)
+  //     .then((userCredential) => {
+  //       // Signed in
+  //       const user = userCredential.user;
+  //       dispatch({type:"LOGIN", payload:user});
+  //       navitage("/")
+  //     })
+  //     .catch((error) => {
+  //       setError(true);
+  //     });
+  // };
   const handleLogin = (e) => {
     e.preventDefault();
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        dispatch({type:"LOGIN", payload:user});
-        navitage("/")
-      })
-      .catch((error) => {
-        setError(true);
-      });
+    if (email === "tcc@test.com" && password === "finalproject") {
+      // Berhasil login
+      setError(false);
+      navigate("/");
+    } else {
+      // Gagal login
+      setError(true);
+    }
   };
-
   return (
     <div className="login">
       <form onSubmit={handleLogin}>
@@ -45,11 +56,11 @@ const Login = () => {
         />
         <button type="submit">Login</button>
         {error && <span>Wrong email or password!</span>}
-        <div className="register">
+        {/* <div className="register">
         <Link to="/users/new" className="link">
           Register
         </Link>
-      </div>
+        </div> */}
       </form>
     </div>
     
